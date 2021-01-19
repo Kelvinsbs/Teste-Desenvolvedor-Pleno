@@ -8,7 +8,7 @@ Este projeto tem como base o <a href="https://github.com/PatrickJS/NG6-starter">
 <hr>
 
 ### Instruções para executar este projeto
-Primeiramente é necessário baixar todas as dependencias necessárias que estão disponiveis <a href="https://github.com/PatrickJS/NG6-starter">Aqui</a>, feito esse passo poderá ser feito o download ou clone deste repositório. Agora abra o projeto no seu editor de texto e em seguida no terminal entre na pasta ```testedzigual``` e digite o seguinte comando ``` npm start ``` e espere executar que ele irá abrir uma guia no seu navegador padrão com o projeto.
+Primeiramente é necessário baixar todas as dependencias necessárias que estão disponiveis <a href="https://github.com/PatrickJS/NG6-starter">Aqui</a>, feito esse passo poderá ser feito o download ou clone deste repositório. Agora abra o projeto no seu editor de texto e em seguida no terminal utilize os seguintes comandos ```npm install``` e ``` npm start ``` e espere executar que ele irá abrir uma guia no seu navegador padrão com o projeto.
 
 <hr>
 

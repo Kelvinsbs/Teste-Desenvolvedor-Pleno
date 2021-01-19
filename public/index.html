@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Autor: Kelvin Santos Barcelos
+    18/01/2021 -->
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <script src="https://cdn.quilljs.com/1.1.3/quill.js"></script>
+    <script src="https://cdn.quilljs.com/1.1.3/quill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+    <link href="tradeTools.css" rel="stylesheet"></link>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"></link>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript> 
+    <div id="root"></div>
+    <div id="container">
+        
+      <div id="logo">
+          <img src="./tradetools-logo.svg" id="imgLogo" style="width: 151px; height: 40;" className="App-logo" alt="logo" onclick="abreModalLogo()"/>
+      </div>
+      <br>
+      <br>
+      <div id="campoTextoUm">
+          <div id="toolbar"></div>
+          <div id="editor">
+              <h1>Give your team autonomy while preserving the visual identity of your company</h1>
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+  
+      <div id="imagens">
+          <img src="./imagem1.jpeg" id="imgPrincipal"  onclick="abreModal()"/>
+
+      </div>
+
+      <br>
+
+      <div id="campoTextoDois">
+          <div id="toolbar"></div>
+          <div id="editor2">
+              <a className="App-link" href="https://www.tradetools.co" rel="noopener noreferrer">www.tradetools.co</a>
+          </div>
+      </div>
+
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body" style="height: 300px; text-align: center;">
+                      <img src="./imagem1.jpeg" className="img-trocar" alt="logo" style="height: 100px; width: 100px;" onclick="trocaImg(this)"/>
+                      <img src="./imagem2.jpg" className="img-trocar" alt="logo" style="height: 100px; width: 100px;" onclick="trocaImg(this)"/>
+                      <img src="./imagem3.jpg" className="img-trocar" alt="logo" style="height: 100px; width: 100px;" onclick="trocaImg(this)"/>
+                      <img src="./imagem4.jpg" className="img-trocar" alt="logo" style="height: 100px; width: 100px;" onclick="trocaImg(this)"/>
+                      <br>
+                      <br>
+                      <img src="./imagem5.jpg" className="img-trocar" alt="logo" style="height: 100px; width: 100px;" onclick="trocaImg(this)"/>
+                      <img src="./imagem6.jpg" className="img-trocar" alt="logo" style="height: 100px; width: 100px;" onclick="trocaImg(this)"/>
+                      <img src="./imagem7.jpg" className="img-trocar" alt="logo" style="height: 100px; width: 100px;" onclick="trocaImg(this)"/>
+                      <img src="./imagem8.jpg" className="img-trocar" alt="logo" style="height: 100px; width: 100px;" onclick="trocaImg(this)"/>
+                  </div>
+              </div>
+  
+          </div>
+      </div>
+
+      <div class="modal fade" id="ModalLogo" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body" style="height: 300px; text-align: center;">
+                      <img src="./tradetools-logo.svg" className="img-trocar" alt="logo" style="height: 100px; width: 100px;" onclick="trocaImgLogo(this)"/>
+                      <img src="./logo.svg" className="img-trocar" alt="logo" style="height: 100px; width: 100px;" onclick="trocaImgLogo(this)"/>
+                  </div>
+              </div>
+  
+          </div>
+      </div>
+    </div>
+
+
+    <script>
+
+      var toolbarOptions = [
+        ['bold', 'italic', 'underline', 'strike'],
+        ['blockquote', 'code-block'],
+        [{'header': [1, 2, 3, 4, 5, 6, false]}],
+        [{'list': 'ordered'}, {'list': 'bullet'}],
+        [{'script': 'sub'}, {'script': 'super'}],
+        [{'indent': '-1'}, {'indent': '+1'}],
+        [{'direction': 'rtl'}],
+        [{'size': ['small', false, 'large', 'huge']}],
+        ['link', 'image', 'video', 'formula'],
+        [{'color': []}, {'background': []}],
+        [{'font': []}],
+        [{'align': []}]
+      ];
+
+      var quill = new Quill('#editor', {
+          modules: {
+              toolbar: toolbarOptions
+          },
+          theme: 'snow'
+      });
+      var quill = new Quill('#editor2', {
+          modules: {
+              toolbar: toolbarOptions
+          },
+          theme: 'snow'
+      });
+
+      function abreModal() {
+          $("#myModal").modal({
+              show: true
+          });
+      }
+
+      function trocaImg(imagem){
+          document.getElementById('imgPrincipal').src = imagem.src;
+          $("#myModal").modal('hide');
+      }
+
+      function abreModalLogo() {
+          $("#ModalLogo").modal({
+              show: true
+          });
+      }
+
+      function trocaImgLogo(imagem){
+          document.getElementById('imgLogo').src = imagem.src;
+          $("#ModalLogo").modal('hide');
+      }
+    </script>
+
+  </body>
+</html>
